@@ -1,0 +1,1356 @@
+{
+	"info": {
+		"_postman_id": "107a42c4-9da4-45a5-bc34-73bdcef323a3",
+		"name": "PetIsland",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/api/account/require-code?email=cuongw.me@gmail.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/account/require-code?email=cuongwme@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"require-code"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "cuongwme@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account/register?email=cuongw.me@gmail.com&code=7119",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "ndc0878",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ndc",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Free",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "{\"name\":\"Lee Nguyen\",\"phoneNumber\":\"8421212121\",\"address\":{\"street\":\"25/23 A street\"},\"bio\":\"A developer\",\"settings\":{},\"avatar\":\"0f62fc31-6d0d-4e86-a398-28be72429347\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/register?email=cuongw.me777@gmail.com&code=2337",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"register"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "cuongw.me777@gmail.com"
+						},
+						{
+							"key": "code",
+							"value": "2337"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account/register?email=cuongw.me@gmail.com&code=7119 Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "ndc0878",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ndc",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "Free",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "{\"name\":\"Lee Nguyen\",\"phoneNumber\":\"8421212121\",\"address\":{\"street\":\"25/23 A street\"},\"bio\":\"A developer\",\"settings\":{},\"avatar\":\"0f62fc31-6d0d-4e86-a398-28be72429347\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/check-code?email=cuongw.me777@gmail.com&code=2337",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"check-code"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "cuongw.me777@gmail.com"
+						},
+						{
+							"key": "code",
+							"value": "2337"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "My big cat",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This is my big cat",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Can Tho",
+							"type": "text"
+						},
+						{
+							"key": "settings",
+							"value": "{}",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "New",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10000000",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "{\n   \"info\": {},\n   \"category\": \"f27f9377-bce0-4887-9a7e-e47ba3cd0595\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "[\n{\"id\": \"b641f21d-5f83-4999-af59-9945afc6ca42\"},\n   {\n      \"title\": \"whitecat\",\n      \"description\": \"White Cat\"\n   }\n]\n",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"value": "[\"644e47bc-7f7e-4e93-a4f0-fe51685b1d40\",\"fe06a9aa-904e-4656-9bfb-2b5bc7af815e\",\"a4f8016c-5201-4256-a0c1-59be8cf8f4d9\"]",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/tag",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "white_husky",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "The white Husky ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/tag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/tag",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "big_cat",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "The big cat",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/tag/346321f3-02f3-4234-9129-6439dba478f6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"tag",
+						"346321f3-02f3-4234-9129-6439dba478f6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/tag",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/tag/fa605eba-0a90-441c-801b-2c13a51e3021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"tag",
+						"fa605eba-0a90-441c-801b-2c13a51e3021"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc1Nzg3NzEwLCJleHAiOjE1NzcwODM3MTB9.HcOMs04Ds8aYTIOs5OLl__xKZJGEDotAR_sQTVhTWGg"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/135901ba-e1cf-4dc6-9292-a48972d1be9d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"135901ba-e1cf-4dc6-9292-a48972d1be9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Sell a cute dog",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "This is ....",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Ho Chi Minh",
+							"type": "text"
+						},
+						{
+							"key": "settings",
+							"value": "{}",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "New",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "999000",
+							"type": "text"
+						},
+						{
+							"key": "pet",
+							"value": "{\"info\":{},\"category\":\"1fb7a1ad-0217-4548-9cc7-24c47d3a0610\"}",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "{\"newTags\":[{\"title\":\"big_cat_cat\", \"description\": \"The big cat cat\"}],\"deleteTags\":[\"c6a207ae-d855-40cf-815d-602c5caf9c24\"]}",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"value": "{\"newImages\":[\"4325e983-ef7b-4714-8c72-d8a17491a443\"],\"deleteImages\":[\"58e60e90-bb93-481c-8c6d-71f76a54c0ed\"]}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/post/29a38f87-caac-4f29-9fd2-09ee206b65bc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"post",
+						"29a38f87-caac-4f29-9fd2-09ee206b65bc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/post/6c5ebf21-a9a9-4c32-b4d2-4a69b65b2b9e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"post",
+						"6c5ebf21-a9a9-4c32-b4d2-4a69b65b2b9e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "images",
+							"type": "file",
+							"src": "/home/cuongw/Pictures/ramiz-dedakovic-9SWHIgu8A8k-unsplash.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "long",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "031545154",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "{}",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"value": "e120b563-e1ed-404e-9ba9-51e106199487",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Kha",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "031545154",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "{}",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"value": "{\"deleteImage\":\"a80017d3-9d7c-4531-bb28-f3c87af0c5f0\", \"newImage\": \"7205421e-09e1-4f13-8106-04e805c64416\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/user/abbe6c5c-2374-4758-a491-a080d47d265d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user",
+						"abbe6c5c-2374-4758-a491-a080d47d265d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "1247",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "8545454",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "8545454",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "cuo7ngw.me@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/135901ba-e1cf-4dc6-9292-a48972d1be9d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"135901ba-e1cf-4dc6-9292-a48972d1be9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account?offset=0&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/report",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTU3NjMwMTE3MCwiZXhwIjoxNTc3NTk3MTcwfQ.hjTS2he7ARon4yrcUoftG5M9hHKztZtrNCFcILekNv4"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/report?offset=0&limit=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"report"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTU3NjMwMTE3MCwiZXhwIjoxNTc3NTk3MTcwfQ.hjTS2he7ARon4yrcUoftG5M9hHKztZtrNCFcILekNv4"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reason",
+							"value": "I like",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "...",
+							"type": "text"
+						},
+						{
+							"key": "post",
+							"value": "a333a5c6-c806-4c95-9216-edb7d6a41543",
+							"type": "text"
+						},
+						{
+							"key": "reportedBy",
+							"value": "6a1fbea6-403a-4c7a-b465-02d1fabce84c",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/report",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTU3NjMwMTE3MCwiZXhwIjoxNTc3NTk3MTcwfQ.hjTS2he7ARon4yrcUoftG5M9hHKztZtrNCFcILekNv4"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "action",
+							"value": "Resolve",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/report/a58353d2-5fa6-4b00-bc2d-975757a3f10b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"report",
+						"a58353d2-5fa6-4b00-bc2d-975757a3f10b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/account/:id/status",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "Deactive",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/account/135901ba-e1cf-4dc6-9292-a48972d1be9d/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"account",
+						"135901ba-e1cf-4dc6-9292-a48972d1be9d",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/user/abbe6c5c-2374-4758-a491-a080d47d265d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user",
+						"abbe6c5c-2374-4758-a491-a080d47d265d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/tag",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/tag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc1NjQyMzQ3LCJleHAiOjE1NzY5MzgzNDd9.c-WZUG35wq58m0kmHIJENx72Sia6-Ou4QUYh7BxCoUo",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/post?offset=0&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"post"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "category",
+							"value": "Pet category",
+							"disabled": true
+						},
+						{
+							"key": "petCategoryId",
+							"value": "f27f9377-bce0-4887-9a7e-e47ba3cd0595",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/pet-category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Dog",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "7205421e-09e1-4f13-8106-04e805c64416",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/pet-category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"pet-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/pet-category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Dog",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "7205421e-09e1-4f13-8106-04e805c64416",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/pet-category/789736eb-5bff-4c5f-8c2e-4e7d5bb38776",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"pet-category",
+						"789736eb-5bff-4c5f-8c2e-4e7d5bb38776"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/pet-category",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/pet-category/1d36384d-5ee4-45ee-8140-30d9777042d7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"pet-category",
+						"1d36384d-5ee4-45ee-8140-30d9777042d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/pet-category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImY2NTBhZjBmLWNhNzAtNGNhNi05ZDU0LTYyZjEzZjE3M2FhMCIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0NTg1MjI5LCJleHAiOjE1NzU4ODEyMjl9.5X6F19ALy5k5KIPW9FmWHMnhsZAerco0ue9R4JZLPZw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/pet-category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"pet-category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/post-like/react?postId=41c1ee1c-0272-453a-914d-5ca2dc2fd9ef",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMWZiZWE2LTQwM2EtNGM3YS1iNDY1LTAyZDFmYWJjZTg0YyIsInJvbGUiOiJGcmVlIiwiaWF0IjoxNTc0OTIxODkzLCJleHAiOjE1NzYyMTc4OTN9.VwdVikXLUbhybLhh1aysWR-XalZt6DHrtNleIcKRwrc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/post/41c1ee1c-0272-453a-914d-5ca2dc2fd9ef/react",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"post",
+						"41c1ee1c-0272-453a-914d-5ca2dc2fd9ef",
+						"react"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
