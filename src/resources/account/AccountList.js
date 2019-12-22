@@ -1,4 +1,4 @@
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography, Avatar } from '@material-ui/core';
 import React from 'react';
 import { Datagrid, DateField, List, TextField } from 'react-admin';
 import { apiUrl } from '../../provider/dataProvider';
@@ -52,12 +52,28 @@ const ActionField = ({ record, source }) => {
   )
 }
 
+const AccountField = ({ record }) => {
+  const { username, user } = record;
+  const size = 40;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center'}}>
+      {user && user.Avatar && <Avatar
+        src={`${user.avatar.url}?size=${size}x${size}`}
+        sizes={size}
+        style={{ width: size, height: size, marginRight: 8 }}
+      />}
+      {username}
+    </div>
+
+  )
+}
+
 export const AccountList = (props) => (
   <List {...props}
-  filters={<CustomFilter source="User name" />}>
+    filters={<CustomFilter source="User name" />}>
     <Datagrid>
       <TextField source="id" label="ID" />
-      <TextField source="username" label="User name" />
+      <AccountField label="User name" />
       <TextField source="role" label="Role" />
       <TextField source="email" label="Email" />
       <TextField source="user.name" label="Name" />

@@ -56,7 +56,7 @@ export default {
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
         return httpClient(url).then(({ headers, json }) => ({
-            data: json.rows,
+            data: json.rows.filter(({ status }) => !status || status !== 'Deleted'),
             total: json.count,
         }));
     },

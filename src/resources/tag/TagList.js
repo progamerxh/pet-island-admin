@@ -10,7 +10,6 @@ export const TagList = (props) => (
             <TextField source="title" label="Title"/>
             <TextField source="description" label="Description"/>
             <DateField source="updatedAt" label="Updated at" showTime locales="vi-VN"/>
-            <TextField source="numberofpost" label="Number of posts"/>
             <EditButton />
             <DeleteButton />
         </Datagrid>

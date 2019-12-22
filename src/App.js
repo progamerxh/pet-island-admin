@@ -14,7 +14,8 @@ import CategoryCreate from './resources/category/CategoryCreate';
 import {
   Label,
   People,
-  Pets
+  Pets,
+  Assignment,
 } from '@material-ui/icons';
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
     <Admin
       authProvider={authProvider}
       dataProvider={dataProvider}>
+      <Resource
+        name="report"
+        icon={Assignment}
+        list={ReportList}
+      />
       <Resource
         name="pet-category"
         icon={Pets}
@@ -38,10 +44,6 @@ function App() {
         name="account"
         icon={People}
         list={AccountList} />
-      <Resource
-        name="report"
-        list={ReportList}
-      />
     </Admin>
   );
 }
