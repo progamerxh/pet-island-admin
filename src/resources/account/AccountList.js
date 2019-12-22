@@ -1,7 +1,8 @@
-import { Chip } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import React from 'react';
 import { Datagrid, DateField, List, TextField } from 'react-admin';
 import { apiUrl } from '../../provider/dataProvider';
+import { CustomFilter } from '../category/CategoryList';
 
 const handleStatusClick = (id, status) => {
   const token = localStorage.getItem('token')
@@ -22,34 +23,48 @@ const handleStatusClick = (id, status) => {
 }
 
 const StatusField = ({ record, source }) => {
-  return (
-    <Chip
-      label={record[source]}
-      color={record[source] === 'Active' ? 'primary' : 'default'}
-    />
-  )
+  const colors = {
+    Active: 'blue',
+    Deactive: 'normal',
+  }
+  return <Typography
+    style={{ color: colors[record[source]] }}
+  >
+    {record[source]}
+  </Typography >
 }
 
 const ActionField = ({ record, source }) => {
   return (
-    <Chip
-      label={record[source] === 'Active' ? 'Deactive' : 'Active'}
-      color={record[source] === 'Active' ? 'secondary' : 'primary'}
+    <Button
+      variant="contained"
+      color="primary"
+      size='small'
+      style={{
+        marginRight: 15,
+        backgroundColor: record[source] === 'Active' ? 'red' : 'blue'
+      }}
       onClick={() => handleStatusClick(record.id, record[source] === 'Active' ? 'Deactive' : 'Active')}
-    />
+    >
+      {record[source] === 'Active' ? 'Deactive' : 'Active'}
+    </Button>
+
   )
 }
 
 export const AccountList = (props) => (
-  <List {...props}>
+  <List {...props}
+  filters={<CustomFilter source="User name" />}>
     <Datagrid>
       <TextField source="id" label="ID" />
       <TextField source="username" label="User name" />
+      <TextField source="role" label="Role" />
       <TextField source="email" label="Email" />
-      <TextField source="name" label="Name" />
-      <TextField source="address" label="Address" />
-      <TextField source="dob" label="DOB" />
-      <TextField source="number" label="Number of reporters" />
+      <TextField source="user.name" label="Name" />
+      <TextField source="user.phoneNumber" label="Phone" />
+      <TextField source="user.address.city" label="Address" />
+      <TextField source="user.dob" label="DOB" />
+      <TextField source="post" label="Number post" />
       <DateField source="updatedAt" label="Updated at" showTime locales="vi-VN" />
       <StatusField source="status" label="Status" />
       <ActionField source="status" label="Action" />

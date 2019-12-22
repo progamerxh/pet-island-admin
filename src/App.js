@@ -11,6 +11,11 @@ import TagCreate from './resources/tag/TagCreate';
 import TagEdit from './resources/tag/TagEdit';
 import CategoryEdit from './resources/category/CategoryEdit';
 import CategoryCreate from './resources/category/CategoryCreate';
+import {
+  Label,
+  People,
+  Pets
+} from '@material-ui/icons';
 
 function App() {
   return (
@@ -19,16 +24,19 @@ function App() {
       dataProvider={dataProvider}>
       <Resource
         name="pet-category"
+        icon={Pets}
         list={CategoryList}
         edit={CategoryEdit}
         create={CategoryCreate} />
       <Resource
         name="tag"
+        icon={Label}
         list={TagList}
         create={TagCreate}
         edit={TagEdit} />
       <Resource
         name="account"
+        icon={People}
         list={AccountList} />
       <Resource
         name="report"

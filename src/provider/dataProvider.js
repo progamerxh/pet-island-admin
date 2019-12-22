@@ -2,6 +2,24 @@ import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
 export const apiUrl = `https://petisland.herokuapp.com/api`;
+
+const uploadFile = file => new Promise((resolve, reject) => {
+    const token = localStorage.getItem('token')
+    let data = new FormData()
+    data.append('images', file.rawFile)
+
+    fetch(`${apiUrl}/image`, {
+        method: 'POST',
+        headers: {
+            'x-access-token': token
+        },
+        body: data
+    }).then(res => res.json())
+        .then(json => resolve(json))
+        .catch(e => reject(e))
+
+});
+
 const httpClient = (url, options = {}) => {
     if (!options.headers) {
         options.headers = new Headers({ Accept: 'application/json' });
@@ -11,7 +29,7 @@ const httpClient = (url, options = {}) => {
     options.headers.set('x-access-token', token);
     return fetchUtils.fetchJson(url, options);
 }
-const objFilter = ( obj, validParams) => {
+const objFilter = (obj, validParams) => {
     var result = {}, key;
     // ---------------^---- as noted by @CMS, 
     //      always declare variables with the "var" keyword
@@ -33,7 +51,7 @@ export default {
             // sort: JSON.stringify([field, order]),
             offset: (page - 1) * perPage,
             limit: perPage,
-            // filter: JSON.stringify(params.filter),
+            ...params.filter
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
@@ -77,15 +95,29 @@ export default {
     },
 
     update: (resource, params) => {
+        const { data } = params;
         const validParams = {
             'tag': ['title', 'description'],
-            'pet-category': ['name', 'description'],
+            'pet-category': ['name', 'description', 'image'],
         }
+        if (resource === 'pet-category' && data.image) {
+            return uploadFile(data.image)
+                .then(imageArr =>
+                    httpClient(`${apiUrl}/${resource}/${params.id}`, {
+                        method: 'PUT',
+                        body: JSON.stringify({
+                            ...objFilter(data, validParams[resource]),
+                            image: imageArr[0].id,
+                        }),
+                    }).then(({ json }) => ({ data: json }))
+                ).catch(e => console.log(e))
 
-        return httpClient(`${apiUrl}/${resource}/${params.id}`, {
-            method: 'PUT',
-            body: JSON.stringify(objFilter(params.data, validParams[resource])),
-        }).then(({ json }) => ({ data: json }))
+        } else {
+            return httpClient(`${apiUrl}/${resource}/${params.id}`, {
+                method: 'PUT',
+                body: JSON.stringify(objFilter(data, validParams[resource])),
+            }).then(({ json }) => ({ data: json }))
+        }
     },
 
     updateMany: (resource, params) => {
@@ -98,13 +130,31 @@ export default {
         }).then(({ json }) => ({ data: json }));
     },
 
-    create: (resource, params) =>
-        httpClient(`${apiUrl}/${resource}`, {
-            method: 'POST',
-            body: JSON.stringify(params.data),
-        }).then(({ json }) => ({
-            data: { ...params.data, id: json.id },
-        })),
+    create: async (resource, params) => {
+        const { data } = params;
+        if (resource === 'pet-category' && data.image) {
+            return uploadFile(data.image)
+                .then(imageArr =>
+                    httpClient(`${apiUrl}/${resource}`, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            ...data,
+                            image: imageArr[0].id,
+                        }),
+                    }).then(({ json }) => ({
+                        data: { ...data, id: json.id },
+                    }))
+                ).catch(e => console.log(e))
+
+        } else {
+            return httpClient(`${apiUrl}/${resource}`, {
+                method: 'POST',
+                body: JSON.stringify(params.data),
+            }).then(({ json }) => ({
+                data: { ...params.data, id: json.id },
+            }));
+        }
+    },
 
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {

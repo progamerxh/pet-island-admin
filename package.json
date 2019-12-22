@@ -13,6 +13,7 @@
     "react-scripts": "3.3.0"
   },
   "homepage": "./",
+  "proxy": "https://petisland.herokuapp.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
